@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    
+    <link rel="stylesheet" href="/Login.css">
+
+</head>
+<body>
+    <div class="full">
+    <form id="f1" action="/Submitted.html" >
+
+        
+            <h1><b>Login</b></h1>
+        
+    
+        <div class="username">
+            <label for="name">Username</label>
+            <input id="uid" type="text" placeholder="Type your username" required>
+            
+        </div>
+
+        <div class="username">
+            <label for="password">Password</label>
+            <input id="p1" type="password" placeholder="Type your password" required>
+        </div>
+
+        <div class="forget">
+            <a href="/Forgot.html" target="_main">Forget Password?</a>
+        </div>
+
+        
+            <button type="submit" class="submit"><b>LOGIN</b></button>
+        
+
+        <div class="para"><p><b>Or Sign Up Using</b></p></div>
+
+        <div class="image">
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="facebook logo" width="28">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="twitter logo" width="27">
+            <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="google logo" height="25">
+        </div>
+    </form>
+</div>
+
+    <script>
+       document.getElementById('f1').addEventListener('submit', function(f) {
+        f.preventDefault();   
+
+
+        const uname = document.getElementById("uid").value;
+        const pword = document.getElementById("p1").value;
+
+        console.log("USERNAME = " + uname + "\n" + "PASSWORD = " + pword);
+
+        localStorage.setItem('USERNAME',uname);     // here USERNAME  is string and uname is variable
+        localStorage.setItem('PASSWORD', pword);        
+
+        alert("DATA SAVED ")
+
+        
+      
+        
+       })
+    </script>
+
+</body>
+</html>
